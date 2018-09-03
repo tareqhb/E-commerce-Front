@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Iproduit } from './domain/iproduit';
 import { BehaviorSubject } from 'rxjs';
+import { Router, ActivatedRoute } from '../../node_modules/@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,8 @@ export class BasketService {
   deleteFromBasket(p: string){
     this.product_basket = this.product_basket.filter(it => it.product_id !== p);
     this.messageSource.next(this.product_basket.length); 
+
+   
     //this.totalArrayData = this.totalArrayData.filter(item => item.Id !== objectitem.id
 
   }

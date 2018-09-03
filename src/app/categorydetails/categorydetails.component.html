@@ -1,14 +1,13 @@
-
-    <div class="row">
-      <ng-container>
-          <div class="col">
-        <div class="card-header text-white bg-info" style="width: 20rem;">
-          <h5>{{category?.category_name}}</h5>
-        </div>
-        </div>
-      </ng-container>
+<div class="row">
+  <ng-container>
+    <div class="col">
+      <div class="card-header text-white bg-info" style="width: 20rem;">
+        <h5>{{category?.category_name}}</h5>
+      </div>
     </div>
- 
+  </ng-container>
+</div>
+
 <!-- <div class="card" class="-mt-3">
     <div class="card-header text-white bg-info">
        -->
@@ -18,17 +17,17 @@
   <ng-container *ngFor="let p of category.products">
     <div class="col">
       <div class="card " style="width: 16rem;">
-          <img class="card-img-top" [src]="p.image1" alt="Card image cap">
+        <img class="card-img-top" [src]="p.image1" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{p.product_name}}</h5>
-          <p class="card-text"> €{{p.product_price_buy}}</p>
-          <a (click)="ajouterAuPanier(p)" class="btn btn-primary">Ajouter Panier</a>
+          <p class="card-text"> {{p.product_price_buy | currency: 'EUR':'symbol':'3.2'}}</p>
+          
         </div>
-
-
-
-
+        <div class="card-footer">
+            <button (click)="ajouterAuPanier(p)" class="btn btn-primary btn-block">Ajouter Panier</button>
+        </div>
       </div>
+
     </div>
 
   </ng-container>

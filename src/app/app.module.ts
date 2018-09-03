@@ -32,6 +32,7 @@ const routes: Route[] = [
   {path: 'products', component: ProductsComponent },
   {path: 'orders-success', component: OrdersSuccessComponent },
   {path: 'basket', component: BasketComponent },
+  {path: 'basket/:id', component: BasketComponent },
   
   {path: 'my/orders', component: MyOrdersComponent },
   {path: 'check-out', component: CheckOutComponent },
@@ -68,7 +69,8 @@ const routes: Route[] = [
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes), 
+    // RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'}), 
     AppRoutingModule,
     FormsModule,
     HttpClientModule

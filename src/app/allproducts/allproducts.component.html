@@ -10,17 +10,22 @@
   </div>
 <div class="row">
   <ng-container *ngFor="let p of produits | async">
-    <div class="col">
-      <div class="card " style="width: 16rem;">
-          <img class="card-img-top" [src]="p.image1" alt="Card image cap">
-          <div class="card-body">
+      <div class="col">
+          <div class="card " style="width: 16rem;">
+            <img class="card-img-top" [src]="p.image1" alt="Card image cap">
+            <div class="card-body">
               <h5 class="card-title">{{p.product_name}}</h5>
-              <p class="card-text"> €{{p.product_price_buy}}</p>
-              <a (click)="ajouterAuPanier(p)" class="btn btn-primary">Ajouter Panier</a>
+              <p class="card-text">  {{p.product_price_buy | currency: 'EUR':'symbol':'3.2'}}</p>
+              
+            </div>
+            <div class="card-footer">
+                <a (click)="ajouterAuPanier(p)" class="btn btn-primary btn-block">Ajouter Panier</a>
+            </div>
           </div>
-
-      </div>
+    
+        </div>
+    
+      </ng-container>
     </div>
-   
-  </ng-container>
-</div>
+    
+    

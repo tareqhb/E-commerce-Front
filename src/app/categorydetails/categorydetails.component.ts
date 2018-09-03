@@ -49,5 +49,12 @@ export class CategorydetailsComponent implements OnInit {
     this._panier.addToBasket(pp);
 
   }
+  getQ(p: Iproduit): boolean{
+    if(this._panier.product_basket.find(a=>a.product_id==p.product_id)){
+      return true;
+
+    }else return false;
+  
+  }
 
 }
