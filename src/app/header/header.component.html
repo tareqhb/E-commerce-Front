@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+  <a class="navbar-brand" routerLink="">E-commerce</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+    aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isNavbarCollapsed">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li> <a class="nav-link" href="#">Link</a></li> -->
+      <li>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="text">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </li>
+
+    </ul>
+
+    <div *ngIf="!user">
+      <a class="nav-link" routerLink="/login">Login</a>
+    </div>
+
+
+
+    <div ngbDropdown *ngIf="!user" class="nav-item dropdown ">
+      <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Utilisateurs</a>
+      <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+        <a class="dropdown-item" routerLink="/my/orders">Mes Orders</a>
+        <a class="dropdown-item" routerLink="/admin/orders">Gestion d'orders</a>
+        <a class="dropdown-item" routerLink="/admin/products">Gestion des Produits</a>
+        <a class="dropdown-item" (click)="logout()">Log out</a>
+      </div>
+    </div>
+
+    <div class=" navbar-nav nav-item">
+    <a routerLink="/basket" class="btn btn-info btn-lg">
+        
+          Panier  <span class="fa fa-shopping-cart"></span>
+          <span class="badge badge-danger" *ngIf="data > 0">{{data}}</span>
+        </a>
+      </div>
+
+    
+
+  </div>
+</nav>

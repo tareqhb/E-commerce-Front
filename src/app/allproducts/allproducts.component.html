@@ -1,0 +1,26 @@
+
+<div class="row">
+    <ng-container>
+        <div class="col">
+      <div class="card-header text-white bg-info" style="width: 20rem;">
+          <h5>Tous Les Produits</h5>
+      </div>
+      </div>
+    </ng-container>
+  </div>
+<div class="row">
+  <ng-container *ngFor="let p of produits | async">
+    <div class="col">
+      <div class="card " style="width: 16rem;">
+          <img class="card-img-top" [src]="p.image1" alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">{{p.product_name}}</h5>
+              <p class="card-text"> €{{p.product_price_buy}}</p>
+              <a (click)="ajouterAuPanier(p)" class="btn btn-primary">Ajouter Panier</a>
+          </div>
+
+      </div>
+    </div>
+   
+  </ng-container>
+</div>
