@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
   <a class="navbar-brand" routerLink="">E-commerce</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+   aria-controls="navbarsExampleDefault"
     aria-expanded="false" aria-label="Toggle navigation" (click)="isNavbarCollapsed = !isNavbarCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -36,8 +37,8 @@
     <div class=" navbar-nav nav-item">
     <a routerLink="/basket" class="btn btn-info btn-lg">
         
-          Panier  <span class="fa fa-shopping-cart"></span>
-          <span class="badge badge-danger" *ngIf="data > 0">{{data}}</span>
+          Panier  <span class="fa fa-shopping-cart"></span> 
+          <span class="badge badge-danger"  *ngIf="data > 0"  style="margin-left:0.5em" >{{data}}</span>
         </a>
       </div>
 

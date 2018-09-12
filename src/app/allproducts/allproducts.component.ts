@@ -10,19 +10,28 @@ import { BasketService } from '../basket.service';
   templateUrl: './allproducts.component.html',
   styleUrls: ['./allproducts.component.css']
 })
-export class AllproductsComponent  {
+export class AllproductsComponent {
 
   produits;
- 
+  test: boolean = false;
 
-  constructor( private _service: ProduitService, private _panier: BasketService) {
+  constructor(private _service: ProduitService, private _panier: BasketService) {
 
     this.produits = _service.getProduits();
-   }
+  }
 
-   ajouterAuPanier(pp: Iproduit){
+  ajouterAuPanier(pp: Iproduit) {
     this._panier.addToBasket(pp);
 
-  } 
+  }
+  getQ(p: Iproduit): boolean {
+    if (this._panier.product_basket.find(item => item.product_name === p.product_name) == null) {
+
+      return true;
+
+    } else {
+      return false;
+    }
+  }
 
 }

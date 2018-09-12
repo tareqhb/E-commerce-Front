@@ -33,7 +33,7 @@ const routes: Route[] = [
   {path: 'orders-success', component: OrdersSuccessComponent },
   {path: 'basket', component: BasketComponent },
   {path: 'basket/:id', component: BasketComponent },
-  
+ // {path: 'tempo', redirectTo: 'basket' },
   {path: 'my/orders', component: MyOrdersComponent },
   {path: 'check-out', component: CheckOutComponent },
   {path: 'login', component: LoginComponent },

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Icategorie } from '../../domain/icategorie';
+import { CategorieService } from '../../categorie.service';
 
 @Component({
   selector: 'app-product-form',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-
-  constructor() { }
+  data: Icategorie[];
+  constructor(private _service: CategorieService) { }
 
   ngOnInit() {
+    this._service.getcategorie().subscribe(res => this.data = res,
+      erreur => console.log('ATTENTION Il y a l\'erreur : ' + erreur));
   }
 
 }

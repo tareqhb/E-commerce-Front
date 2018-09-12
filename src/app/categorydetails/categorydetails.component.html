@@ -23,8 +23,11 @@
           <p class="card-text"> {{p.product_price_buy | currency: 'EUR':'symbol':'3.2'}}</p>
           
         </div>
-        <div class="card-footer">
-            <button (click)="ajouterAuPanier(p)" class="btn btn-primary btn-block">Ajouter Panier</button>
+        <div *ngIf=getQ(p) class="card-footer">
+            <button  (click)="ajouterAuPanier(p)" class="btn btn-primary btn-block">Ajouter Panier</button>
+        </div>
+        <div *ngIf=!getQ(p) class="card-footer">
+            <button routerLink="/basket"  class="btn btn-primary btn-block"> Panier  <span class="fa fa-shopping-cart"></span></button>
         </div>
       </div>
 
